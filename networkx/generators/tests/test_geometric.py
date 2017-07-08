@@ -97,9 +97,7 @@ class TestSoftRandomGeometricGraph(object):
             # Adjacent vertices must be within the given distance.
             if v in G[u]:
                 assert_true(dist(G.node[u]['pos'], G.node[v]['pos']) <= 0.25)
-            # Nonadjacent vertices must be at greater distance.
-            else:
-                assert_false(dist(G.node[u]['pos'], G.node[v]['pos']) <= 0.25)
+
 
     def test_p(self):
         """Tests for providing an alternate distance metric to the
@@ -113,9 +111,6 @@ class TestSoftRandomGeometricGraph(object):
             # Adjacent vertices must be within the given distance.
             if v in G[u]:
                 assert_true(dist(G.node[u]['pos'], G.node[v]['pos']) <= 0.25)
-            # Nonadjacent vertices must be at greater distance.
-            else:
-                assert_false(dist(G.node[u]['pos'], G.node[v]['pos']) <= 0.25)
 
     def test_node_names(self):
         """Tests using values other than sequential numbers as node IDs.
@@ -131,9 +126,6 @@ class TestSoftRandomGeometricGraph(object):
             # Adjacent vertices must be within the given distance.
             if v in G[u]:
                 assert_true(dist(G.node[u]['pos'], G.node[v]['pos']) <= 0.25)
-            # Nonadjacent vertices must be at greater distance.
-            else:
-                assert_false(dist(G.node[u]['pos'], G.node[v]['pos']) <= 0.25)
 
     def test_p_dist_default(self):
         """Tests default p_dict = 0.5 returns graph with edge count <= RGG with
